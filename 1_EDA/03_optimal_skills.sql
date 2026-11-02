@@ -11,19 +11,42 @@ and salary?
 
 */
 
+
+
+
 SELECT *
 FROM job_postings_fact
 LIMIT 10;
+
+
+
+
+DESCRIBE job_postings_fact;
+
+
+
 
 SELECT *
 FROM skills_dim
 LIMIT 10;
 
+
+
+
+SELECT
+COUNT(jpf.job_title_short)
+FROM job_postings_fact AS jpf
+WHERE job_title_short = 'Data Engineer';
+
+
+
+
 SELECT 
-    jpf.job_id,
-    sd.skills,
-    jpf.salary_year_avg
-    
+DISTINCT job_title_short
+FROM job_postings_fact;
+
+
+
 FROM 
     job_postings_fact AS jpf
 WHERE  
@@ -50,11 +73,6 @@ SELECT
 FROM job_postings_fact;
 
 
-
-SELECT *
-FROM job_postings_fact
-LIMIT 10;
-.last;
 
 
 SELECT 
