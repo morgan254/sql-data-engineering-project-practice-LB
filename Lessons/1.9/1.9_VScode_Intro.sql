@@ -1,0 +1,2 @@
+.mode duckbox
+SELECT DIST
